@@ -1,0 +1,31 @@
+---
+  extends: "airbnb"
+  plugins:
+    - jasmine
+  rules:
+    object-curly-spacing: 0
+    comma-dangle: 0
+    no-unused-vars: 1
+    no-param-reassign: 0
+    padded-blocks: 0
+    no-trailing-spaces: 0
+    no-spaced-func: 0
+    arrow-body-style: 0
+    no-confusing-arrow: 0
+    arrow-parens: 0
+    max-len: [1, 120]
+    import/no-extraneous-dependencies: 0
+    react/jsx-filename-extension:
+      - 2
+      - extensions:
+        - .js
+    jasmine/no-focused-tests: 2
+    jasmine/no-disabled-tests: 1
+  parserOptions:
+    ecmaFeatures:
+      experimentalObjectRestSpread: true
+  env:
+    jasmine: true
+    jest: true
+    browser: true
+    node: true

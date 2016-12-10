@@ -1,0 +1,63 @@
+{
+  "name": "new",
+  "description": "Testing out new technologies",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest --watch",
+    "test:ci": "jest --coverage",
+    "start": "webpack-dev-server --content-base=src/ --progress",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production webpack -p --progress --bail",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "jest": {
+    "automock": false,
+    "verbose": true,
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "<rootDir>../test/style-mock.js"
+    },
+    "rootDir": "./src"
+  },
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel": "^6.5.2",
+    "babel-core": "^6.20.0",
+    "babel-jest": "^17.0.2",
+    "babel-loader": "^6.2.9",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "cheerio": "^0.22.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.26.1",
+    "enzyme": "^2.6.0",
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jasmine": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "2",
+    "eslint-plugin-react": "^6.8.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta",
+    "gh-pages": "^0.12.0",
+    "html-webpack-plugin": "^2.24.1",
+    "jest-cli": "^17.0.3",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.13.0",
+    "postcss": "^5.2.6",
+    "postcss-loader": "^1.2.0",
+    "react-addons-test-utils": "^15.4.1",
+    "react-hot-loader": "^1.3.1",
+    "rimraf": "^2.5.4",
+    "sass-lint": "^1.10.2",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "2.1.0-beta.12"
+  }
+}
