@@ -2,21 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import uuid from 'node-uuid';
 
-import {observable} from 'mobx';
+import {observable, action} from 'mobx';
 import {observer} from 'mobx-react';
 
 class TodoStore {
 
   @observable todos = [];
 
-  addTodo(text) {
+  @action addTodo(text) {
     this.todos.push({
       id: uuid.v4(),
       text
     });
   }
 
-  removeTodo(id) {
+  @action removeTodo(id) {
     this.todos = this.todos.filter(todo => todo.id !== id);
   }
 
