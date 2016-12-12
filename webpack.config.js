@@ -8,25 +8,30 @@ const path = require('path');
 
 const config = {
   context: path.join(__dirname, 'src'),
-  entry: './app.js',
+  entry: './app.tsx',
   output: {
     path: path.join(__dirname, 'src'),
-    filename: 'app-bundle.js'
+    filename: 'app.min.js'
   },
   devtool: 'cheap-eval-module-source-map',
   resolve: {
     alias: {
       react$: path.resolve('./node_modules/react')
-    }
+    },
+    extensions: ['.js', '.ts', '.tsx']
   },
   module: {
     rules: [{
+      test: /\.ts/,
+      exclude: /node_modules/,
+      use: 'awesome-typescript-loader'
+    }, /*{
       test: /\.js$/,
       exclude: /node_modules/,
       use: [{
         loader: 'babel-loader',
       }]
-    }, {
+    },*/ {
       test: /\.json$/,
       use: [{
         loader: 'json-loader'
