@@ -1,32 +1,9 @@
-# next
-Testing out new technologies
+# new
 
-## Prerequisites
+Experimenting with new technologies in conjunction with React
 
-```
-npm install
-```
-
-## Run
-
-```
-npm start
-```
-
-## Test
-
-```
-npm test
-```
-
-## Build
-
-```
-npm run build
-```
-
-## Deploy
-
-```
-npm run deploy
-```
+* Webpack 2
+* Yarn
+* [TypeScript](https://github.com/jrwebdev/new/tree/typescript)
+* [MobX](https://github.com/jrwebdev/new/tree/mobx)
+* [Async Routing](https://github.com/jrwebdev/new/tree/async-routing)
