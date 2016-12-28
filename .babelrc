@@ -1,6 +1,16 @@
 {
   "presets": [
-    ["es2015", {"modules": false}],
+    ["env", {
+      "targets": {
+        "node": 6,
+        "chrome": "last 2 versions",
+        "firefox": "last 2 versions",
+        "edge": "last 2 versions",
+        "safari": "last 2 versions",
+        "ie": 11
+      },
+      "modules": false
+    }],
     "react"
   ],
   "plugins": ["transform-object-rest-spread", "transform-class-properties"]
