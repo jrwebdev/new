@@ -8,7 +8,10 @@ const path = require('path');
 
 const config = {
   context: path.join(__dirname, 'src'),
-  entry: './app.js',
+  entry: [
+    'react-hot-loader/patch',
+    './app.js'
+  ],
   output: {
     path: path.join(__dirname, 'src'),
     filename: 'app-bundle.js'
