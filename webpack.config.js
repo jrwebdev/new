@@ -7,10 +7,13 @@ const path = require('path');
 
 const config = {
   context: path.join(__dirname, 'src'),
-  entry: './app.js',
+  entry: {
+    app1: './modules/app1/app1.js',
+    app2: './modules/app2/app2.js',
+  },
   output: {
     path: path.join(__dirname, 'src'),
-    filename: 'app-bundle.js'
+    filename: '[name].min.js'
   },
   devtool: 'cheap-eval-module-source-map',
   resolve: {
@@ -61,7 +64,10 @@ const config = {
       template: 'index.template.html',
       hash: true
     }),
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('styles.css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'core'
+    }),
   ]
 };
 
