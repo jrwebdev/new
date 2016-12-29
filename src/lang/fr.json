@@ -1,0 +1,4 @@
+{
+  "hello": "Bonjour {name}!",
+  "testMessage": "This is a <b>test</b> message"
+}

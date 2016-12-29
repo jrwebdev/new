@@ -4725,6 +4725,15 @@ react-hot-loader@^1.3.1:
     react-hot-api "^0.4.5"
     source-map "^0.4.4"
 
+react-intl-translations-manager@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-intl-translations-manager/-/react-intl-translations-manager-4.0.0.tgz#58a53cdb93e264e0243836c82375e5ec98dc3a68"
+  dependencies:
+    chalk "^1.1.3"
+    glob "^7.0.3"
+    json-stable-stringify "^1.0.1"
+    mkdirp "^0.5.1"
+
 react-intl@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-2.2.1.tgz#90744aa47c1c28db129882de82bf90e26d1a2b3e"
