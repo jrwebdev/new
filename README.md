@@ -10,3 +10,5 @@ Experimenting with technologies in conjunction with React
 * [MobX](https://github.com/jrwebdev/next/tree/mobx)
 * [Async Routing](https://github.com/jrwebdev/next/tree/async-routing)
 * [Code Splitting](https://github.com/jrwebdev/next/tree/code-splitting)
+* [React Intl](https://github.com/jrwebdev/next/tree/react-intl)
+  * [Async Language Switching](https://github.com/jrwebdev/next/tree/react-intl-async)
