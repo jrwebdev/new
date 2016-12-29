@@ -6,11 +6,11 @@ import {shallow} from 'enzyme';
 import Hello from './hello';
 
 it('should display a name', () => {
-  const hello = shallow(<Hello name="James" />);
-  expect(hello.text()).toContain('Hello James!');
+  const hello = shallow(<Hello name="Bob" />);
+  expect(hello.text()).toContain('Hello Bob!');
 });
 
 it('should display an age', () => {
-  const hello = shallow(<Hello name="James" age={29} />);
-  expect(hello.text()).toContain('Hello James, 29!');
+  const hello = shallow(<Hello name="Bob" age={50} />);
+  expect(hello.text()).toContain('Hello Bob, 50!');
 });
