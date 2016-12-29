@@ -12,3 +12,4 @@ Experimenting with technologies in conjunction with React
 * [Code Splitting](https://github.com/jrwebdev/next/tree/code-splitting)
 * [React Intl](https://github.com/jrwebdev/next/tree/react-intl)
   * [Async Language Switching](https://github.com/jrwebdev/next/tree/react-intl-async)
+  * [Translation Processing](https://github.com/jrwebdev/next/tree/babel-plugin-react-intl)
