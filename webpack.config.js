@@ -1,7 +1,6 @@
 'use strict'; // eslint-disable-line
 
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
@@ -70,14 +69,14 @@ if (process.env.NODE_ENV === 'production') {
 
   config.module.rules.push({
     test: /\.css$/,
-    use: [{
-      loader: ExtractTextPlugin.extract('css')
-    }]
+    loader: ExtractTextPlugin.extract({
+      loader: 'css-loader!postcss-loader'
+    })
   }, {
     test: /\.scss$/,
-    use: [{
-      loader: ExtractTextPlugin.extract('css!sass')
-    }]
+    loader: ExtractTextPlugin.extract({
+      loader: 'css-loader!sass-loader!postcss-loader'
+    })
   });
 
   config.output.path = path.join(__dirname, 'dist');
@@ -98,11 +97,6 @@ if (process.env.NODE_ENV === 'production') {
       loader: 'css-loader'
     }, {
       loader: 'postcss-loader',
-      options: {
-        plugins() {
-          return [autoprefixer];
-        }
-      }
     }]
   }, {
     test: /\.scss$/,
@@ -112,12 +106,7 @@ if (process.env.NODE_ENV === 'production') {
     }, {
       loader: 'css-loader'
     }, {
-      loader: 'postcss-loader',
-      options: {
-        plugins() {
-          return [autoprefixer];
-        }
-      }
+      loader: 'postcss-loader'
     }, {
       loader: 'sass-loader'
     }]
