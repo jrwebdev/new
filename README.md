@@ -1,32 +1,3 @@
-# next
-Testing out new technologies
+# next/typescript
 
-## Prerequisites
-
-```
-npm install
-```
-
-## Run
-
-```
-npm start
-```
-
-## Test
-
-```
-npm test
-```
-
-## Build
-
-```
-npm run build
-```
-
-## Deploy
-
-```
-npm run deploy
-```
+TypeScript/React example
