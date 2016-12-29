@@ -1,0 +1,6 @@
+[
+  {
+    "id": "hello",
+    "defaultMessage": "Hello {name}!"
+  }
+]

@@ -13,6 +13,8 @@ import de from 'react-intl/locale-data/de';
 import fr from 'react-intl/locale-data/fr';
 import es from 'react-intl/locale-data/es';
 
+import Test from './components/test';
+
 addLocaleData([...en, ...de, ...fr, ...es]);
 
 const messages = {
@@ -66,6 +68,9 @@ class Main extends React.Component {
               day="numeric"
               weekday="long"
             />
+          </div>
+          <div>
+            <Test />
           </div>
         </div>
       </IntlProvider>

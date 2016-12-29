@@ -1,0 +1,7 @@
+[
+  {
+    "id": "testMessage",
+    "description": "Test message using HTML",
+    "defaultMessage": "This is a <b>test</b> message"
+  }
+]
