@@ -8,26 +8,11 @@ import {
   FormattedDate
 } from 'react-intl';
 
-import en from 'react-intl/locale-data/en';
-import de from 'react-intl/locale-data/de';
-import fr from 'react-intl/locale-data/fr';
-import es from 'react-intl/locale-data/es';
-
-addLocaleData([...en, ...de, ...fr, ...es]);
-
-const messages = {
-  en: {
-    hello: 'Hello {name}!'
-  },
-  de: {
-    hello: 'Hallo {name}!'
-  },
-  fr: {
-    hello: 'Bonjour {name}!'
-  },
-  es: {
-    hello: '¡Hola {name}!'
-  }
+const localeData = {
+  en: () => Promise.all([System.import('react-intl/locale-data/en'), System.import('./lang/en.json')]),
+  de: () => Promise.all([System.import('react-intl/locale-data/de'), System.import('./lang/de.json')]),
+  fr: () => Promise.all([System.import('react-intl/locale-data/fr'), System.import('./lang/fr.json')]),
+  es: () => Promise.all([System.import('react-intl/locale-data/es'), System.import('./lang/es.json')]),
 };
 
 class Main extends React.Component {
@@ -36,21 +21,45 @@ class Main extends React.Component {
     locale: 'en'
   }
 
+  componentWillMount() {
+    this.setLocale(this.state.locale);
+  }
+
+  setLocale(locale) {
+    this.setState({loadingLocale: locale});
+    // TODO: Error handling
+    localeData[locale]().then(([data, messages]) => {
+      addLocaleData(data);
+      this.setState({locale, messages, loadingLocale: ''});
+    });
+  }
+
   changeLocale = ({target}) => {
-    this.setState({locale: target.value});
+    this.setLocale(target.value);
   }
 
   render() {
-    const localisedMessages = messages[this.state.locale];
+    if (!this.state.messages) { return <div>Loading...</div>; }
+
+    const {locale, messages, loadingLocale} = this.state;
+
     return (
-      <IntlProvider locale={this.state.locale} messages={localisedMessages}>
+      <IntlProvider locale={locale} messages={messages}>
         <div>
-          <select value={this.state.locale} onChange={this.changeLocale}>
+          <select
+            value={loadingLocale || locale}
+            onChange={this.changeLocale}
+            disabled={loadingLocale}
+            style={{marginRight: 10}}
+          >
+
             <option value="en">English</option>
             <option value="de">Deutsche</option>
             <option value="fr">français</option>
             <option value="es">Español</option>
+
           </select>
+          {loadingLocale ? 'Loading...' : ''}
           <div style={{marginTop: 25, fontSize: 48}}>
             <FormattedMessage
               id="hello"
