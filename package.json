@@ -7,7 +7,7 @@
     "test:ci": "jest --coverage",
     "start": "webpack-dev-server --content-base=src/ --progress",
     "prebuild": "rimraf dist",
-    "build": "cross-env NODE_ENV=production webpack --progress --bail",
+    "build": "cross-env NODE_ENV=production webpack -p --progress --bail",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

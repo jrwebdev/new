@@ -13,7 +13,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, 'src'),
-    filename: '[name].min.js'
+    filename: '[name]/[name].min.js'
   },
   devtool: 'cheap-eval-module-source-map',
   resolve: {
@@ -59,14 +59,19 @@ const config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    /*
     new HtmlWebpackPlugin({
-      title: 'next',
       template: 'index.template.html',
-      hash: true
+      filename: 'app1/index.html',
+      hash: true,
+      chunks: ['core', 'app1']
     }),
-    */
-    new ExtractTextPlugin('styles.css'),
+    new HtmlWebpackPlugin({
+      template: 'index.template.html',
+      filename: 'app2/index.html',
+      hash: true,
+      chunks: ['core', 'app2']
+    }),
+    new ExtractTextPlugin('[name]/[name].css'),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'core'
     }),
