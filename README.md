@@ -1,12 +1,3 @@
-# next
+# next/react-intl
 
-Experimenting with technologies in conjunction with React
-
-* Webpack 2
-* babel-preset-env
-* Yarn
-* [React Hot Loader 3](https://github.com/jrwebdev/next/tree/react-hot-loader%403)
-* [TypeScript](https://github.com/jrwebdev/next/tree/typescript)
-* [MobX](https://github.com/jrwebdev/next/tree/mobx)
-* [Async Routing](https://github.com/jrwebdev/next/tree/async-routing)
-* [Code Splitting](https://github.com/jrwebdev/next/tree/code-splitting)
+i18n with [React Intl](https://github.com/yahoo/react-intl)
